@@ -1,3 +1,7 @@
 # Quasar App
 
-> WIP
+Created using `Quasar-CLI`. Just run
+```
+npm install
+quasar dev
+```
