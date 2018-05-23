@@ -11,30 +11,54 @@
       />
     </label>
     <q-btn label="update ct" color="primary" @click="updateCT()"/>
-    <div class="row" style="padding: 15px 0">
-      <q-input
-        v-for="(pt1_c, i) in pt1"
-        v-bind:key="i"
-        v-model="pt1[i]"
-        class="ptBox col-1"
-        align="center"
-        maxlength=1
-        @keyup="syncPT(1)"
-      />
+    
+    <div class="row">
+      <div class="ptBox col-2">
+        <div class="row" style="padding: 15px 0">
+          <q-input
+            v-for="i in row_nums"
+            v-bind:key="i"
+            class="ptBox col-12"
+            align="right"
+            disabled
+          >
+          {{i}}
+          </q-input>
+        </div>
+      </div>
+      <div class="ptBox col-5" style="padding: 0 10px">
+        <div class="row" style="padding: 15px 0">
+          <q-input
+            v-for="(pt1_c, i) in pt1"
+            v-bind:key="i"
+            v-model="pt1[i]"
+            class="ptBox col-1"
+            align="center"
+            maxlength=1
+            @keyup="syncPT(1)"
+          />
+        </div>
+      </div>
+      <div class="ptBox col-5" style="padding: 0 10px">
+        <div class="row" style="padding: 15px 0">
+          <q-input
+            v-for="(pt2_c, j) in pt2"
+            v-bind:key="j"
+            v-model="pt2[j]"
+            class="ptBox col-1"
+            align="center"
+            maxlength=1
+            @keyup="syncPT(2)"
+          />
+        </div>
+      </div>
     </div>
-    <div class="row" style="padding: 15px 0">
-      <q-input
-        v-for="(pt2_c, j) in pt2"
-        v-bind:key="j"
-        v-model="pt2[j]"
-        class="ptBox col-1"
-        align="center"
-        maxlength=1
-        @keyup="syncPT(2)"
-      />
+
+    
+    <div class="row">
+      <p class="col-12">pt1: {{pt1_text}}</p>
+      <p class="col-12">pt2: {{pt2_text}}</p>
     </div>
-    <p>pt1: {{pt1_text}}</p>
-    <p>pt2: {{pt2_text}}</p>
     <div class="row">
       pt1: {{pt1}}
       pt2: {{pt2}}
@@ -119,6 +143,15 @@ export default {
     },
     pt2_text() {
       return this.pt2.map(char => char ? char : '?').join('')
+    },
+    row_nums() {
+      let ptlength = this.pt1.length
+      let rows = []
+      for (let i = 0; i <= Math.ceil(ptlength/12); i++)
+      {
+        rows.push(i*12)
+      }
+      return rows
     }
   },
   watch: {
