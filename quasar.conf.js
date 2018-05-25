@@ -34,7 +34,8 @@ module.exports = function (ctx) {
           loader: 'eslint-loader',
           exclude: /(node_modules|quasar)/
         })*/
-      }
+      },
+      productName: 'RKC Tool for Project 2 (CSCI 181)'
     },
     devServer: {
       // https: true,

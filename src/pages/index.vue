@@ -120,7 +120,7 @@ export default {
       pt2: [],
       pt_input: '',
       ct: [],
-      ct_text: '00100 11001'
+      ct_text: ''
     }
   },
   methods: {

@@ -17,7 +17,7 @@
         </q-btn>
 
         <q-toolbar-title>
-          CSCI 181 Project 2
+          RKC Tool for Project 2 (CSCI 181)
           <div slot="subtitle">By Oras Phongpanangam</div>
         </q-toolbar-title>
       </q-toolbar>
