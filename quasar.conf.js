@@ -60,7 +60,8 @@ module.exports = function (ctx) {
         'QItemSide',
 
         'QInput',
-        'QBtn'
+        'QBtn',
+        'QField'
       ],
       directives: [
         'Ripple'
